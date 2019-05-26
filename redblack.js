@@ -168,6 +168,7 @@ var RedBlack = /** @class */ (function() {
 
 //JavaScript code
 
+//inserting keys into the three
 let redblackTree = new RedBlack();
 
       redblackTree.insert("diccionario", new Word("diccionario", "Reper",null,null));
@@ -177,11 +178,9 @@ let redblackTree = new RedBlack();
       redblackTree.insert("carro", new Word("carro", "defi de carro22", "defi carrr3333", "deficarrr4444"));
 
 
-      let txt_word;
-
       //Get text
       function getText() {
-        txt_word = document.getElementById("text_Word").value;
+        let txt_word = document.getsElementById("text_Word").value;
         showResults(txt_word);
       }
 
