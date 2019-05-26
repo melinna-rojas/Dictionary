@@ -92,8 +92,8 @@ class Queue<Type>{
 class Nodot {
   public key: string;
   public val: Word;
-  public left: Nodot;
-  public right: Nodot;
+  public left: Nodot = null;
+  public right: Nodot = null;
   public color: boolean;
   public n: number;
 
@@ -110,7 +110,7 @@ class RedBlack {
   private static RED: boolean = true;
   private static BLACK: boolean = false;
 
-  private root: Nodot;
+  private root: Nodot = null;
 
   private isRed(x: Nodot): boolean {
     if (x === null) {
@@ -155,6 +155,7 @@ class RedBlack {
 
   private insert2(h:Nodot,key:string,val: Word):Nodot{
     if (h === null) {
+      
         return new Nodot(key,val,RedBlack.RED,1);
     }
 
