@@ -55,13 +55,13 @@ h6 {
   font-weight: 700;
 }
 
-.masthead .masthead-content .input-group-newsletter input {
+.masthead .masthead-content .input-group-search input {
   height: auto;
   font-size: 1rem;
   padding: 1rem;
 }
 
-.masthead .masthead-content .input-group-newsletter button {
+.masthead .masthead-content .input-group-search button {
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
