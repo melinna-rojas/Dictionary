@@ -21,10 +21,16 @@ h6 {
 }
 
 .masthead {
-  position: relative;
+position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
   z-index: 2;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .masthead .masthead-bg {
@@ -92,6 +98,90 @@ h6 {
   }
   .masthead .masthead-content p {
     font-size: 1.3rem;
+  }
+}
+
+.masthead2 {
+  position: relative;
+  padding-bottom: 3rem;
+  z-index: 2;
+
+}
+
+.masthead2 .masthead2-bg {
+ position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  min-height: 35rem;
+  height: 100%;
+}
+
+.masthead2 .masthead2-content h1 {
+  font-size: 2.5rem;
+}
+
+.masthead2 .masthead2-content p {
+  font-size: 1.1rem;
+  align: justify;
+}
+
+.masthead2 .masthead2-content p strong {
+  font-weight: 700;
+}
+
+.masthead2 .masthead2-content label {
+  font-size: 1.2rem;
+
+}
+
+.masthead2 .masthead2-content label strong {
+  font-weight: 700;
+  color: #ba7c37;
+  font-style: italic;
+}
+
+.masthead2 .masthead2-content .input-group-search input {
+  height: auto;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.masthead2 .masthead2-content .input-group-search button {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .masthead2 {
+    height: 100%;
+    min-height: 0;
+    width: 40.5rem;
+    padding-bottom: 0;
+  }
+  .masthead2 .masthead2-bg {
+    min-height: 0;
+  }
+  .masthead2 .masthead2-content {
+    padding-left: 3rem;
+    padding-right: 10rem;
+  }
+  .masthead2 .masthead2-content h1 {
+    font-size: 3.5rem;
+  }
+  .masthead2 .masthead2-content p {
+    font-size: 1.1rem;
+    align: justify;
+  }
+  .masthead2 .masthead2-content label {
+    font-size: 1.3rem;
+    color: #ba7c37;
+    font-style: italic;
   }
 }
 
