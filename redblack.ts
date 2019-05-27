@@ -153,44 +153,44 @@ class RedBlack {
     return this.obtainValue(key) != null;
   }
 
-  private insert2(h:Nodot,key:string,val: Word):Nodot{
+  private insert2(h: Nodot, key: string, val: Word): Nodot {
     if (h === null) {
-      
-        return new Nodot(key,val,RedBlack.RED,1);
+
+      return new Nodot(key, val, RedBlack.RED, 1);
     }
 
     let cmp = key.localeCompare(h.key);
-    if(cmp<0){
-      h.left = this.insert2(h.left,key,val);
-    }else if(cmp >0){
+    if (cmp < 0) {
+      h.left = this.insert2(h.left, key, val);
+    } else if (cmp > 0) {
       h.right = this.insert2(h.right, key, val);
-    }else{
+    } else {
       h.val = val;
     }
 
-    if(this.isRed(h.right) && !this.isRed(h.left)){
+    if (this.isRed(h.right) && !this.isRed(h.left)) {
       h = this.swapLeft(h);
     }
 
-    if(this.isRed(h.left) && this.isRed(h.left.left)){
+    if (this.isRed(h.left) && this.isRed(h.left.left)) {
       h = this.swapRight(h);
     }
 
-    if(this.isRed(h.left) && this.isRed(h.right)){
+    if (this.isRed(h.left) && this.isRed(h.right)) {
       this.changeColor(h);
     }
 
-    h.n = this.sizeTree(h.left) + this.sizeTree(h.right)+1;
+    h.n = this.sizeTree(h.left) + this.sizeTree(h.right) + 1;
     return h;
   }
 
-  public insert(key:string, val:Word): void {
-    this.root = this.insert2(this.root,key,val);
+  public insert(key: string, val: Word): void {
+    this.root = this.insert2(this.root, key, val);
     this.root.color = RedBlack.BLACK;
   }
 
-  private swapRight(h:Nodot):Nodot{
-    let x:Nodot = h.left;
+  private swapRight(h: Nodot): Nodot {
+    let x: Nodot = h.left;
     h.left = x.right;
     x.right = h;
     x.color = h.color;
@@ -198,8 +198,8 @@ class RedBlack {
     return x;
   }
 
-  private swapLeft(h:Nodot):Nodot{
-    let x:Nodot = h.right;
+  private swapLeft(h: Nodot): Nodot {
+    let x: Nodot = h.right;
     h.right = x.left;
     x.left = h;
     x.color = h.color;
@@ -207,7 +207,7 @@ class RedBlack {
     return x;
   }
 
-  private changeColor(h: Nodot):void{
+  private changeColor(h: Nodot): void {
     h.color = !h.color;
     h.left.color = !h.left.color;
     h.right.color = !h.right.color;
