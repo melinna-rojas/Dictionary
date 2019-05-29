@@ -194,6 +194,13 @@ function getText() {
   showResults(txt_word);
 }
 
+
+function getText2(e) {
+  if(e.key == 'Enter'){
+    getText();
+  }
+}
+
 //Where everything happens
 function showResults(txt) {
   let word;
