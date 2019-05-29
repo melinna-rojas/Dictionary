@@ -191,7 +191,6 @@ redblackTree.insert("software", new Word("software", "Conjunto de cosas que rela
 //Get text
 function getText() {
   let txt_word = document.getElementById("text_Word").value;
-  console.log(txt_word);
   showResults(txt_word);
 }
 
@@ -204,8 +203,9 @@ function showResults(txt) {
 
   if (!redblackTree.contain(txt)) {
     document.getElementById("word").innerHTML = "No se encontraron resultados.";
-    document.getElementById("visible").className += " d-none";
+    document.getElementById("visible").className = "d-none";
   } else {
+    document.getElementById("visible").className = "d-block";
     let nodex = redblackTree.obtainValue(txt);
 
     word = nodex.word;
@@ -219,7 +219,7 @@ function showResults(txt) {
     } else {
       document.getElementById("d2").className = "mb-5 d-block";
     }
-    if (defi3 === undefined || defi2 === null) {
+    if (defi3 === undefined || defi3 === null) {
       document.getElementById("d3").className = "mb-5 d-none";
     } else {
       document.getElementById("d3").className = "mb-5 d-block";
