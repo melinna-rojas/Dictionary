@@ -73,7 +73,7 @@
   <div class="share-icon">
     <ul class="list-unstyled text-center mb-0">
       <li class="list-unstyled-item">
-        <a href="#exampleModal" role="button" data-toggle="modal" >
+        <a href="#exampleModal" role="button" data-toggle="modal">
           <i class="fas fa-plus"></i>
         </a>
       </li>
@@ -91,39 +91,73 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
-        <div class="form-group">
-          <label for="word-name" class="col-form-label">Palabra:</label>
-          <input type="text" class="form-control" id="word-name">
-        </div>
-        <div class="form-group">
-          <label for="def1-text" class="col-form-label">Definición:</label>
-          <textarea class="form-control" id="def1-text"></textarea>
-        </div>
+          <form class="needs-validation" action="#" novalidate>
+            <div class="form-group">
+              <label for="word-name" class="col-form-label">Palabra:</label>
+              <div>
+                <input type="text" class="form-control" onkeypress="return controltag(event)" onclick="capturar()" maxlength="20" id="word-name">
+                <div class="valid-feedback">
+                  ¡Correcto!
+                </div>
+                <div class="invalid-feedback">
+                  Ingresar la palabra
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="def1-text" class="col-form-label">Definición 1:</label>
+              <div>
+                <textarea class="form-control" id="def1-text" onchange="habilitar1()" maxlength="200"></textarea>
+                <div class="valid-feedback">
+                  ¡Correcto!
+                </div>
+                <div class="invalid-feedback">
+                  Ingresar definición
+                </div>
+              </div>
+            </div>
 
-        <div class="form-group">
-          <label for="def2-text" class="col-form-label">Definición:</label>
-          <textarea class="form-control" id="def2-text"></textarea>
-        </div>
+            <div class="form-group">
+              <label for="def2-text" class="col-form-label">Definición 2:</label>
+              <div>
+                <textarea class="form-control" id="def2-text" onchange="habilitar2()" maxlength="200" disabled></textarea>
+                <div class="valid-feedback">
+                  ¡Correcto!
+                </div>
+                <div class="invalid-feedback">
+                  Ingresar definición
+                </div>
+              </div>
+            </div>
 
-        <div class="form-group">
-          <label for="def3-text" class="col-form-label">Definición:</label>
-          <textarea class="form-control" id="def3-text"></textarea>
-        </div>
-      </form>
+            <div class="form-group">
+              <label for="def3-text" class="col-form-label">Definición 3:</label>
+              <div>
+                <textarea class="form-control" id="def3-text" maxlength="200" disabled></textarea>
+
+                <div class="valid-feedback">
+                  ¡Correcto!
+                </div>
+                <div class="invalid-feedback">
+                  Ingresar definición
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary" onsubmit="getElements()">Guardar</button>
         </div>
       </div>
     </div>
   </div>
 
 
-<script src="scripts/jquery.js"></script>
-<script src="scripts/bootstrap.bundle.js"></script>
-<script src="scripts/dictionary.js"></script>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/dictionary.js"></script>
+  <script src="scripts/bootstrap.bundle.js"></script>
+
   <script src="redblack.js"></script>
 </body>
 

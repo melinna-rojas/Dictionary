@@ -239,3 +239,13 @@ function showResults(txt) {
   }
 
 }
+
+function getElements(){
+    let word_name = document.getElementById("word_name").value;
+    let def1 = document.getElementById("def1-text").value;
+    let def2 = document.getElementById("def2-text").value;
+    let def3 = document.getElementById("def3-text").value;
+
+redblackTree.insert(word_name, new Word(word_name, def1, def2, def3));
+
+}
