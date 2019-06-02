@@ -248,4 +248,8 @@ function getElements(){
 
 redblackTree.insert(word_name, new Word(word_name, def1, def2, def3));
 
+  document.getElementById("word_name").innerHTML = "";
+  document.getElementById("def1-text").innerHTML = "";
+  document.getElementById("def2-text").innerHTML = "";
+  document.getElementById("def3-text").innerHTML = "";
 }
