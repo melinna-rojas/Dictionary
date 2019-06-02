@@ -139,7 +139,7 @@ position: relative;
 
 .masthead2 .masthead2-content label strong {
   font-weight: 700;
-  color: #ba7c37;
+  color: #fd7e14;
   font-style: italic;
 }
 
@@ -250,8 +250,8 @@ position: relative;
 }
 
 .btn-secondary {
-  background-color: #cd9557;
-  border-color: #cd9557;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
 }
 
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
