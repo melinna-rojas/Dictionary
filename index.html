@@ -95,7 +95,7 @@
             <div class="form-group">
               <label for="word-name" class="col-form-label">Palabra:</label>
               <div>
-                <input type="text" class="form-control" onkeypress="return controltag(event)" onclick="capturar()" maxlength="20" id="word-name">
+                <input type="text" class="form-control" onkeypress="return controltag(event)" maxlength="20" id="word-name">
                 <div class="valid-feedback">
                   ¡Correcto!
                 </div>
@@ -146,7 +146,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clean()">Cerrar</button>
           <button type="button" class="btn btn-primary" onclick="getElements()">Guardar</button>
         </div>
           </form>

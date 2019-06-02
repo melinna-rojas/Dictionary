@@ -1,47 +1,47 @@
-var Word = /** @class */ (function() {
+var Word = /** @class */ (function () {
   function Word(word, definition1, definition2, definition3) {
     this.word = word;
     this.definition1 = definition1;
     this.definition2 = definition2;
     this.definition3 = definition3;
   }
-  Word.prototype.getDefinition1 = function() {
+  Word.prototype.getDefinition1 = function () {
     return this.definition1;
   };
-  Word.prototype.getDefinition2 = function() {
+  Word.prototype.getDefinition2 = function () {
     return this.definition1;
   };
-  Word.prototype.getDefinition3 = function() {
+  Word.prototype.getDefinition3 = function () {
     return this.definition1;
   };
-  Word.prototype.setDefinition2 = function(definition2) {
+  Word.prototype.setDefinition2 = function (definition2) {
     this.definition2 = definition2;
   };
-  Word.prototype.setDefinition3 = function(definition3) {
+  Word.prototype.setDefinition3 = function (definition3) {
     this.definition3 = definition3;
   };
   return Word;
 }());
 //For Queue issues
-var Nodo = /** @class */ (function() {
+var Nodo = /** @class */ (function () {
   function Nodo(value, next) {
     this.value = value;
     this.next = next;
   }
   return Nodo;
 }());
-var Queue = /** @class */ (function() {
+var Queue = /** @class */ (function () {
   function Queue() {
     this.first = null;
     this.last = null;
   }
-  Queue.prototype.isEmpty = function() {
+  Queue.prototype.isEmpty = function () {
     return this.first === null;
   };
-  Queue.prototype.size = function() {
+  Queue.prototype.size = function () {
     return this.n;
   };
-  Queue.prototype.push = function(item) {
+  Queue.prototype.push = function (item) {
     var beforeLast = this.last;
     this.last = new Nodo(item, null);
     if (this.isEmpty) {
@@ -51,7 +51,7 @@ var Queue = /** @class */ (function() {
     }
     this.n++;
   };
-  Queue.prototype.pop = function() {
+  Queue.prototype.pop = function () {
     if (this.isEmpty) {
       console.log("Without elements wuwuwuwuwuw");
     }
@@ -66,7 +66,7 @@ var Queue = /** @class */ (function() {
   return Queue;
 }());
 //For RedBlack Tree issues
-var Nodot = /** @class */ (function() {
+var Nodot = /** @class */ (function () {
   function Nodot(key, val, color, n) {
     this.left = null;
     this.right = null;
@@ -77,26 +77,26 @@ var Nodot = /** @class */ (function() {
   }
   return Nodot;
 }());
-var RedBlack = /** @class */ (function() {
+var RedBlack = /** @class */ (function () {
   function RedBlack() {
     this.root = null;
   }
-  RedBlack.prototype.isRed = function(x) {
+  RedBlack.prototype.isRed = function (x) {
     if (x === null) {
       return false;
     }
     return (x.color === RedBlack.RED);
   };
-  RedBlack.prototype.sizeTree = function(x) {
+  RedBlack.prototype.sizeTree = function (x) {
     if (x === null) {
       return 0;
     }
     return x.n;
   };
-  RedBlack.prototype.isEmptyT = function() {
+  RedBlack.prototype.isEmptyT = function () {
     return (this.root === null);
   };
-  RedBlack.prototype.obtainVal = function(x, key) {
+  RedBlack.prototype.obtainVal = function (x, key) {
     while (x != null) {
       var cmp = key.localeCompare(x.key);
       if (cmp < 0) {
@@ -108,13 +108,13 @@ var RedBlack = /** @class */ (function() {
       }
     }
   };
-  RedBlack.prototype.obtainValue = function(key) {
+  RedBlack.prototype.obtainValue = function (key) {
     return this.obtainVal(this.root, key);
   };
-  RedBlack.prototype.contain = function(key) {
+  RedBlack.prototype.contain = function (key) {
     return this.obtainValue(key) != null;
   };
-  RedBlack.prototype.insert2 = function(h, key, val) {
+  RedBlack.prototype.insert2 = function (h, key, val) {
     if (h === null) {
       return new Nodot(key, val, RedBlack.RED, 1);
     }
@@ -138,11 +138,11 @@ var RedBlack = /** @class */ (function() {
     h.n = this.sizeTree(h.left) + this.sizeTree(h.right) + 1;
     return h;
   };
-  RedBlack.prototype.insert = function(key, val) {
+  RedBlack.prototype.insert = function (key, val) {
     this.root = this.insert2(this.root, key, val);
     this.root.color = RedBlack.BLACK;
   };
-  RedBlack.prototype.swapRight = function(h) {
+  RedBlack.prototype.swapRight = function (h) {
     var x = h.left;
     h.left = x.right;
     x.right = h;
@@ -150,7 +150,7 @@ var RedBlack = /** @class */ (function() {
     h.color = RedBlack.RED;
     return x;
   };
-  RedBlack.prototype.swapLeft = function(h) {
+  RedBlack.prototype.swapLeft = function (h) {
     var x = h.right;
     h.right = x.left;
     x.left = h;
@@ -158,7 +158,7 @@ var RedBlack = /** @class */ (function() {
     h.color = RedBlack.RED;
     return x;
   };
-  RedBlack.prototype.changeColor = function(h) {
+  RedBlack.prototype.changeColor = function (h) {
     h.color = !h.color;
     h.left.color = !h.left.color;
     h.right.color = !h.right.color;
@@ -172,7 +172,7 @@ var RedBlack = /** @class */ (function() {
 //inserting keys into the three
 let redblackTree = new RedBlack();
 console.log(redblackTree);
-redblackTree.insert("diccionario", new Word("diccionario", "Repertorio en forma de libro o en soporte electróncio en el que se recogen, según un orden determinado, las palabras o expresiones de una o más lenguas,o de una materia concreta, acompañadas de su definición, equivalencia o explicación."," Catálogo de noticias o datos de un mismo género, ordenado alfabéticamente.","Obra de consulta en que se recoge y se define o traduce, generalmente en orden alfabético, un conjunto de palabras de una o más lenguas o de una materia determinada."));
+redblackTree.insert("diccionario", new Word("diccionario", "Repertorio en forma de libro o en soporte electróncio en el que se recogen, según un orden determinado, las palabras o expresiones de una o más lenguas,o de una materia concreta, acompañadas de su definición, equivalencia o explicación.", " Catálogo de noticias o datos de un mismo género, ordenado alfabéticamente.", "Obra de consulta en que se recoge y se define o traduce, generalmente en orden alfabético, un conjunto de palabras de una o más lenguas o de una materia determinada."));
 redblackTree.insert("estructura", new Word("estructura", "Disposición o modo de estar relacionadas las distintas partes de un conjunto", "Distribución y orden de las partes importantes de un edificio.", "istribución y orden con que está compuesta una obra de ingenio, como un poema, una historia, etc."));
 redblackTree.insert("dato", new Word("dato", "Información sobre algo concreto que permite su conocimiento exacto o sirve para deducir las consecuencias derivadas de un hecho.", "Documento, testimonio, fundamento.", "Información dispuesta de manera adecuada para su tratamiento por una computadora."));
 redblackTree.insert("árbol", new Word("árbol", "Planta perenne, de tronco leñoso y elevado, que se ramifica a cierta altura del suelo.", "Pieza de hierro en la parte superior del husillo de la prensa de imprimir.", null));
@@ -196,7 +196,7 @@ function getText() {
 
 
 function getText2(e) {
-  if(e.key == 'Enter'){
+  if (e.key == 'Enter') {
     getText();
   }
 }
@@ -240,16 +240,22 @@ function showResults(txt) {
 
 }
 
-function getElements(){
-    let word_name = document.getElementById("word_name").value;
-    let def1 = document.getElementById("def1-text").value;
-    let def2 = document.getElementById("def2-text").value;
-    let def3 = document.getElementById("def3-text").value;
+function getElements() {
+  let word_name = document.getElementById("word-name").value;
+  let def1 = document.getElementById("def1-text").value;
+  let def2 = document.getElementById("def2-text").value;
+  let def3 = document.getElementById("def3-text").value;
 
-redblackTree.insert(word_name, new Word(word_name, def1, def2, def3));
+  redblackTree.insert(word_name, new Word(word_name, def1, def2, def3));
 
-  document.getElementById("word_name").innerHTML = "";
-  document.getElementById("def1-text").innerHTML = "";
-  document.getElementById("def2-text").innerHTML = "";
-  document.getElementById("def3-text").innerHTML = "";
+
 }
+
+
+function clean() {
+  document.getElementById("word-name").value = "";
+  document.getElementById("def1-text").value = "";
+  document.getElementById("def2-text").value = "";
+  document.getElementById("def3-text").value = "";
+}
+
