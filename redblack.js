@@ -271,14 +271,3 @@ function getElements() {
   }
 
 }
-
-function clean() {
-  document.getElementById("word-name").value = "";
-  document.getElementById("def1-text").value = "";
-  document.getElementById("def2-text").value = "";
-  document.getElementById("def3-text").value = "";
-
-  document.getElementById("def2-text").disabled = true; // deshabilitar
-  document.getElementById("def3-text").disabled = true; // deshabilitar
-  document.getElementById("btn_save").disabled = false; // habilitar
-}
